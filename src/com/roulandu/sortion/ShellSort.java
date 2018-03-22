@@ -12,17 +12,18 @@ import java.util.Arrays;
 public class ShellSort {
 	private static void shellSort(int[] a) {
 		int n = a.length;
-	    int h;
-	    for (h = n / 2; h > 0; h /= 2) {
-	        for (int i = h; i < n; i++) {
-	            for (int j = i - h; j >= 0; j -= h) {
-	                if (a[j] > a[j + h]) {
-	                    swap(a, j, j+h);
-	                }
-	            }
-	        }
-	    }
+		int h;
+		for (h = n / 2; h > 0; h /= 2) {
+			for (int i = h; i < n; i++) {
+				for (int j = i - h; j >= 0; j -= h) {
+					if (a[j] > a[j + h]) {
+						swap(a, j, j + h);
+					}
+				}
+			}
+		}
 	}
+
 	private static void swap(int[] arr, int i, int j) {
 		// 异或运算交换两个数数值
 		arr[i] = arr[i] ^ arr[j];
